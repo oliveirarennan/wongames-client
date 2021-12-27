@@ -34,3 +34,11 @@ withClickEvent.args = {
   icon: <AddShoppingCart />,
   onclick: () => alert('Click Event dispatch')
 }
+export const asLink: Story = (args) => <Button {...args} />
+
+asLink.args = {
+  size: 'large',
+  children: 'Buy now',
+  as: 'a',
+  href: '/link'
+}
