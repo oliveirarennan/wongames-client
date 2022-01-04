@@ -1,7 +1,7 @@
 import Button from 'components/Button'
 import * as S from './styles'
 
-export type HightLightProps = {
+export type HighLightProps = {
   title: string
   subtitle: string
   buttonLabel: string
@@ -11,7 +11,7 @@ export type HightLightProps = {
   alignment?: 'right' | 'left'
 }
 
-const HightLight = ({
+const HighLight = ({
   title,
   subtitle,
   buttonLabel,
@@ -19,7 +19,7 @@ const HightLight = ({
   backgroundImage,
   floatImage,
   alignment = 'right'
-}: HightLightProps) => (
+}: HighLightProps) => (
   <S.Wrapper backgroundImage={backgroundImage} alignment={alignment}>
     {!!floatImage && <S.FloatImage src={floatImage} alt={title} />}
     <S.Content>
@@ -32,4 +32,4 @@ const HightLight = ({
   </S.Wrapper>
 )
 
-export default HightLight
+export default HighLight

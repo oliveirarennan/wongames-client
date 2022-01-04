@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
-import HightLight from '.'
+import HighLight from '.'
 import * as S from './styles'
 
 const props = {
@@ -13,7 +13,7 @@ const props = {
 
 describe('<HightLight />', () => {
   it('should render the headings and button', () => {
-    renderWithTheme(<HightLight {...props} />)
+    renderWithTheme(<HighLight {...props} />)
     expect(
       screen.getByRole('heading', { name: /heading 1/i })
     ).toBeInTheDocument()
@@ -26,13 +26,13 @@ describe('<HightLight />', () => {
   })
 
   it('should render background image', () => {
-    const { container } = renderWithTheme(<HightLight {...props} />)
+    const { container } = renderWithTheme(<HighLight {...props} />)
     expect(container.firstChild).toHaveStyle({
       backgroundImage: `url(${props.backgroundImage})`
     })
   })
   it('should render float image', () => {
-    renderWithTheme(<HightLight {...props} floatImage="/float-image.png" />)
+    renderWithTheme(<HighLight {...props} floatImage="/float-image.png" />)
     expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
       'src',
       '/float-image.png'
@@ -40,7 +40,7 @@ describe('<HightLight />', () => {
   })
 
   it('should render align right by default', () => {
-    const { container } = renderWithTheme(<HightLight {...props} />)
+    const { container } = renderWithTheme(<HighLight {...props} />)
     expect(container.firstChild).toHaveStyleRule(
       'grid-template-areas',
       "'floatImage content'"
@@ -53,7 +53,7 @@ describe('<HightLight />', () => {
 
   it('should render align left', () => {
     const { container } = renderWithTheme(
-      <HightLight alignment="left" {...props} />
+      <HighLight alignment="left" {...props} />
     )
     expect(container.firstChild).toHaveStyleRule(
       'grid-template-areas',
@@ -66,7 +66,7 @@ describe('<HightLight />', () => {
   })
 
   it('should match with Snapshot', () => {
-    const { container } = renderWithTheme(<HightLight {...props} />)
+    const { container } = renderWithTheme(<HighLight {...props} />)
     expect(container.firstChild).toMatchSnapshot()
   })
 })
