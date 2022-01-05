@@ -23,7 +23,6 @@
   "lint-staged": {
     "src/**/*": [
       "yarn mylint --fix",
-      "yarn typecheck",
       "yarn test --findRelatedTests --bail"
     ]
   },
