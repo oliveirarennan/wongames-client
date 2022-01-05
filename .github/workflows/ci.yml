@@ -19,6 +19,9 @@ jobs:
       - name: Linting
         run: yarn mylint
 
+      - name: Typecheck
+        run: yarn typecheck
+
       - name: Test
         run: yarn test
 
